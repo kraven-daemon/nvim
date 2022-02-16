@@ -1,8 +1,6 @@
 -- Vim global options configuration
 ---@diagnostic disable: undefined-global
 local opt = vim.opt
-local cmd = vim.cmd
-
 -------------------- OPTIONS -------------------------------
 --  :set all --> for info
 
@@ -51,5 +49,5 @@ opt.updatetime = 100 -- Delay before swap file is saved
 opt.wildmode = {"longest", "full"} -- Command-line completion mode
 opt.wrap = false -- Disable line wrap
 opt.mouse = "a"
-cmd "colorscheme chucky-theme"
+vim.cmd "colorscheme base16-default-dark"
 

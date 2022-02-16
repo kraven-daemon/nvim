@@ -31,10 +31,12 @@ function _G.put(...)
   return ...
 end
 
+-- The order may have impact
+-- just load things by general > to < precise
 prequire("plugins")
 prequire("treesitter")
 prequire("lsp")
-
+prequire("filebrowser")
 prequire("options")
 -- Using treesitter block scope,
 -- Load after treesitter
@@ -44,6 +46,8 @@ prequire("nvim-autopairs").setup{
 }
 
 prequire('statusline') -- lualine
+prequire('keybindings')
+
 
 -- about menu help: IME
 -- :source $VIMRUNTIME/menu.vim
@@ -52,11 +56,7 @@ prequire('statusline') -- lualine
 -- :set wcm=<C-Z>
 -- :map <F4> :emenu <C-Z>
 
--- options settings
--- prequire("options")
--- keybindings
--- prequire("mappings")
--- prequire("auto-events")
+prequire("auto-events")
 -- Nice little rock
 -- require("test-fmt")
 
