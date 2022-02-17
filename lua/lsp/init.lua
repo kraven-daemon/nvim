@@ -21,6 +21,15 @@ table.insert(lua_runtime_path, "lua/?.lua")
 table.insert(lua_runtime_path, "lua/?/init.lua")
 table.insert(lua_runtime_path, vim.fn.expand('~/.luarocks/share/lua/5.3/?.lua'))
 table.insert(lua_runtime_path, vim.fn.expand('~/.luarocks/share/lua/5.3/?/init.lua'))
+table.insert(lua_runtime_path, '/usr/share/awesome/lib/?.lua')
+table.insert(lua_runtime_path, '/usr/share/awesome/lib/?/init.lua')
+
+-- print(vim.inspect(lua_runtime_path))
+
+--[[
+-- TODO check for a general method and modify lua path accordingly
+-- if os.execute("test -d /usr/share/awesome/lib/") then print("awesome") end
+--]]
 
 lspconfig.sumneko_lua.setup {
   settings = {
@@ -39,7 +48,7 @@ lspconfig.sumneko_lua.setup {
         library = {
           vim.fn.expand('~/.luarocks/share/lua/5.1'),
           vim.api.nvim_get_runtime_file("", true),
-          '/usr/share/lua/5.1'
+          '/usr/share/lua/5.1',
         }
       },
       telemetry = {
