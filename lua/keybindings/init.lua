@@ -10,15 +10,18 @@ end
 --- KEYMAP
 ---
 vim.g.mapleader = " "
+
+-- some utility
 map('n', '<leader>f', ':Telescope file_browser<CR>')
-map('n', '<leader>b', ':Telescope buffers<CR>')
 map("n", "<leader>h", ":lua Toggle_hls()<CR>")
 map("n", "<leader>w", ":lua Trim_space()<CR>")
 map("n", "<leader>t", ":TagbarToggle<CR>")
 
--- Primeagen's top 5, you're so right :D
--- "If you press that P, you get exactly what you wanted from that P"
--- like D,C relative yanking to cursor position to \n
+-- buffers
+map('n', '<leader>b', ':Telescope buffers<CR>')
+map('n', '<leader>n', ':bnext<CR>')
+map('n', '<leader>v', ':bprevious<CR>')
+-- smart yanking
 map("n", "Y", "y$")
 
 -- Keeping it centered, when moving in search or joining lines
@@ -32,11 +35,6 @@ map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", "!", "!<c-g>u")
 map("i", "?", "?<c-g>u")
-
--- relative jumping( like 15j or 15k) doesn't count in history jumping
--- history jumping is when
--- <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
--- <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 
 -- move line[s] like a champ
 map("n", "<leader>k", ":m .-2<CR>==")
@@ -62,7 +60,6 @@ map("n", "<A-k>", "<C-w>k")
 map("n", "<A-l>", "<C-w>l")
 
 -- Window Resize
-
 map("n", "+", "<C-w>2+" )
 map("n", "_", "<C-w>2-" )
 map("n", "=", "<C-w>2<" )

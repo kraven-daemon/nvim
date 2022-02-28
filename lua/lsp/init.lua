@@ -60,7 +60,7 @@ lspconfig.sumneko_lua.setup {
 }
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'bashls', 'html', 'cssls', 'jsonls', 'tsserver', 'tailwindcss' } --, 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'bashls', 'html', 'cssls', 'jsonls', 'tsserver', 'tailwindcss', 'svelte' } --, 'rust_analyzer', 'pyright', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = custom_on_attach,
