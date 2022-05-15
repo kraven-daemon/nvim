@@ -18,29 +18,22 @@ end
 local packer = require('packer')
 -- aliasing use to remove annoying lsp warnings of undefined global ...
 local use = packer.use
-local use_rocks = packer.use_rocks
+-- local use_rocks = packer.use_rocks
 
 packer.startup(
     function()
         use {"wbthomason/packer.nvim"}
-        -- language server/completion
+        -- lsp
         use "neovim/nvim-lspconfig"
+        -- completion
         use "hrsh7th/cmp-nvim-lsp"
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
         use "hrsh7th/nvim-cmp"
-        -- for now, luasnip
+        -- snippet
         use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
-
-        -- Coq use python3-venv and sqlite3
-        --use { 'ms-jpq/coq_nvim', branch = 'coq'}
-        --use { 'ms-jpq/coq.artifacts', branch= 'artifacts'}
-        --use 'ms-jpq/chadtree'
-        --use "glepnir/lspsaga.nvim"
-        -- Lua development
-        -- use {"tjdevries/nlua.nvim"}
 
         -- Tha Pope
         use "tpope/vim-commentary"
@@ -48,11 +41,9 @@ packer.startup(
 
         -- Syntax and Treesitter
         use  "preservim/tagbar"
-
-
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
         use "nvim-treesitter/playground"
-        -- Polyglot is a collection of syntax files, lighting treesitter leftovers
+        -- Polyglot is a collection of syntax files, for treesitter leftovers
         use "sheerun/vim-polyglot"
         use "windwp/nvim-autopairs" -- it use treesitter to autopair (){}[]'"'
 
@@ -71,8 +62,8 @@ packer.startup(
         use "chriskempson/base16-vim"
 
         -- rocks test
-        use_rocks {"lua-fmt", server = 'https://luarocks.org/dev'}
-        use_rocks {'luaformatter', server = 'https://luarocks.org/dev'}
+        -- use_rocks {"lua-fmt", server = 'https://luarocks.org/dev'}
+        -- use_rocks {'luaformatter', server = 'https://luarocks.org/dev'}
     end
 )
 

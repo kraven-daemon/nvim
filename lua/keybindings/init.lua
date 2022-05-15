@@ -64,3 +64,12 @@ map("n", "+", "<C-w>2+" )
 map("n", "_", "<C-w>2-" )
 map("n", "=", "<C-w>2<" )
 map("n", "-", "<C-w>2>" )
+
+-- Tabs like browser
+map("n", "<A-1>", "1gt")
+map("n", "<A-2>", "2gt")
+map("n", "<A-3>", "3gt")
+map("n", "<A-4>", "4gt")
+map("n", "<A-5>", "5gt")
+
+
