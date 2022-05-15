@@ -35,9 +35,8 @@ packer.startup(
         use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
 
-        -- Tha Pope
-        use "tpope/vim-commentary"
-        use "tpope/vim-fugitive"
+        -- Comments
+        use "numToStr/Comment.nvim"
 
         -- Syntax and Treesitter
         use  "preservim/tagbar"
@@ -45,6 +44,8 @@ packer.startup(
         use "nvim-treesitter/playground"
         -- Polyglot is a collection of syntax files, for treesitter leftovers
         use "sheerun/vim-polyglot"
+
+        -- Misc
         use "windwp/nvim-autopairs" -- it use treesitter to autopair (){}[]'"'
 
         -- 3 in 1 , plenary(set of functions), popup(vimbuffer overlay boxes) and telescope(fuzzy finder)
@@ -54,7 +55,6 @@ packer.startup(
         }
 
         -- Candy
-        
         use "hoob3rt/lualine.nvim" --, -- requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use "nvim-lua/lsp-status.nvim"
         -- use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons", opt = true}}

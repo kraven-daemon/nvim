@@ -1,11 +1,14 @@
--- Terminal buffer with no decoration
-local cmd = vim.api.nvim_command
+-- Triggers command based on event
 
--- Futureme : try to hide status line or something
--- laststatus=0 statusline=
+-- Reminders about augroup/autocmd
+-- Check events
+-- :help event
+-- Check groups/cmd
+-- :help
 
-cmd([[
-    autocmd TermOpen * setlocal nonumber norelativenumber foldcolumn=0 signcolumn=no "
-]])
-
-
+local gr = vim.api.nvim_create_augroup("kraven", { clear = true })
+vim.api.nvim_create_autocmd("TermOpen", {
+    command = "setlocal nonumber norelativenumber foldcolumn=0 signcolumn=no",
+    pattern = "*",
+    group = gr
+})

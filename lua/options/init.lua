@@ -21,6 +21,9 @@ opt.number = true -- Show line numbers
 opt.relativenumber = true -- Relative line numbers
 opt.numberwidth = 5
 
+-- Bottom
+opt.laststatus = 3 -- bind statusline to bottom
+
 -- opt.colorcolumn = tostring(width)   -- Line length marker for python, mostly..
 -- opt.textwidth = width               -- Maximum width of text
 opt.completeopt = {"menu", "menuone", "noselect"} -- Completion menu
@@ -48,4 +51,5 @@ opt.updatetime = 100 -- Delay before swap file is saved
 opt.wildmode = {"longest", "full"} -- Command-line completion mode
 opt.wrap = false -- Disable line wrap
 opt.mouse = "a"
-vim.cmd "colorscheme base16-classic-dark"
+vim.cmd("colorscheme base16-classic-dark")
+vim.cmd("highlight WinSeparator guibg=None")

@@ -45,16 +45,9 @@ prequire("nvim-autopairs").setup{
     ignored_next_char = "[%w%.]" -- will ignore alphanumeric and `.` symbol
 }
 
-prequire('statusline') -- lualine
+prequire('statusline')
 prequire('keybindings')
-
-
--- about menu help: IME
--- :source $VIMRUNTIME/menu.vim
--- :set wildmenu
--- :set cpo-=<
--- :set wcm=<C-Z>
--- :map <F4> :emenu <C-Z>
+prequire('comments')
 
 prequire("auto-events")
 -- Nice little rock

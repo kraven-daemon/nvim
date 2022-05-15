@@ -6,6 +6,7 @@
 -- https://github.com/sumneko/lua-language-server
 -- luasnip
 
+
 -- Lsp
 local lspc = require('lspconfig')
 -- nvim-cmp
@@ -104,40 +105,36 @@ cmp.setup.cmdline(':', {
 
 
 
+local sumneko_binary_path = vim.fn.exepath('lua-language-server')
+local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h')
 
-
--- ADDITIONNAL LUAPATH
--- Lua need special care, because its not meant to be used `systemwide`
--- Just overload with a bunch of path
--- local lua_runtime_path = vim.split(package.path, ';')
--- table.insert(lua_runtime_path, "lua/?.lua")
--- table.insert(lua_runtime_path, "lua/?/init.lua")
--- print(vim.inspect(lua_runtime_path))
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
 
 lspc.sumneko_lua.setup {
-  settings = {
-    Lua = {
-      -- include a bunch of paths in table format
-      runtime = {
-        version = 'LuaJIT',
-        -- path = lua_runtime_path
-      },
-      diagnostics = {
-        -- lsp now recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- for the general library
-        library = {
-          -- vim.fn.expand('~/.luarocks/share/lua/5.1'),
-          -- vim.api.nvim_get_runtime_file("", true),
-          -- '/usr/share/lua/5.1',
-        }
-      },
-      telemetry = {
-        enable = false,
-      },
-    }
-  },
+    cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
+    settings = {
+        Lua = {
+        runtime = {
+            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT',
+            -- Setup your lua path
+            path = runtime_path,
+        },
+        diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {'vim'},
+        },
+        workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+            enable = false,
+        },
+        },
+    },
   capabilities = capabilities
 }
