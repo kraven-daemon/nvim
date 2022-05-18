@@ -6,7 +6,6 @@
 -- https://github.com/sumneko/lua-language-server
 -- luasnip
 
-
 -- Lsp
 local lspc = require('lspconfig')
 -- nvim-cmp
@@ -18,7 +17,7 @@ local luasnip = require('luasnip')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- bind capabilities to servers consigurations
-local servers = { 'bashls', 'html', 'cssls', 'jsonls', 'tsserver', 'tailwindcss', 'svelte', 'ccls', 'rust_analyzer' }
+local servers = { 'bashls', 'html', 'cssls', 'jsonls', 'tailwindcss', 'svelte', 'ccls', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
   lspc[lsp].setup {
     capabilities = capabilities
@@ -103,38 +102,54 @@ cmp.setup.cmdline(':', {
 
 
 
-
-
+-- Custom setup : sumneko_lua, denols and tsserver
 local sumneko_binary_path = vim.fn.exepath('lua-language-server')
 local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h')
-
 local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
+table.insert(runtime_path, "?/.lua")
+table.insert(runtime_path, "init.lua")
+table.insert(runtime_path, "./lua/?.lua")
+table.insert(runtime_path, "./lua/?/init.lua")
+
 
 lspc.sumneko_lua.setup {
     cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
     settings = {
         Lua = {
-        runtime = {
-            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-            version = 'LuaJIT',
-            -- Setup your lua path
-            path = runtime_path,
-        },
-        diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
-        },
-        workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = vim.api.nvim_get_runtime_file("", true),
-        },
-        -- Do not send telemetry data containing a randomized but unique identifier
-        telemetry = {
-            enable = false,
-        },
-        },
+          workspace = {
+              -- Make the server aware of Neovim runtime files
+              library = vim.api.nvim_get_runtime_file("", true),
+          },
+          runtime = {
+              -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+              version = 'LuaJIT',
+              pathStrict = false,
+              -- Setup your lua path
+              path = runtime_path,
+          },
+          diagnostics = {
+              -- Get the language server to recognize the `vim` global
+              globals = {'vim'},
+          },
+          -- Do not send telemetry data containing a randomized but unique identifier
+          telemetry = {
+              enable = false,
+          },
+      },
     },
   capabilities = capabilities
+}
+
+lspc.denols.setup {
+  root_dir = lspc.util.root_pattern("deno.json"),
+  init_options = {
+    lint = true,
+  },
+}
+
+lspc.tsserver.setup {
+  root_dir = lspc.util.root_pattern("package.json"),
+  init_options = {
+    lint = true,
+  },
 }

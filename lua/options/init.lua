@@ -14,7 +14,7 @@ opt.fillchars = "fold: ,foldclose:*,foldopen:>,foldsep:|"
 -- Invisible caracters
 opt.list = true
 
--- Left side
+-- Left
 opt.foldcolumn = "2"
 opt.signcolumn = "number" -- Show sign info on number column
 opt.number = true -- Show line numbers
@@ -22,7 +22,7 @@ opt.relativenumber = true -- Relative line numbers
 opt.numberwidth = 5
 
 -- Bottom
-opt.laststatus = 3 -- bind statusline to bottom
+opt.laststatus = 3 -- bind statusline to bottom(nvim 0.7 and higher)
 
 -- opt.colorcolumn = tostring(width)   -- Line length marker for python, mostly..
 -- opt.textwidth = width               -- Maximum width of text
@@ -51,5 +51,6 @@ opt.updatetime = 100 -- Delay before swap file is saved
 opt.wildmode = {"longest", "full"} -- Command-line completion mode
 opt.wrap = false -- Disable line wrap
 opt.mouse = "a"
+
 vim.cmd("colorscheme base16-classic-dark")
 vim.cmd("highlight WinSeparator guibg=None")

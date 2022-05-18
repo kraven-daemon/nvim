@@ -38,6 +38,7 @@ prequire("treesitter")
 prequire("lsp")
 prequire("filebrowser")
 prequire("options")
+
 -- Using treesitter block scope,
 -- Load after treesitter
 prequire("nvim-autopairs").setup{
@@ -45,10 +46,12 @@ prequire("nvim-autopairs").setup{
     ignored_next_char = "[%w%.]" -- will ignore alphanumeric and `.` symbol
 }
 
+-- those bars
 prequire('statusline')
+prequire('tabline')
+
 prequire('keybindings')
 prequire('comments')
-
 prequire("auto-events")
 -- Nice little rock
 -- require("test-fmt")
