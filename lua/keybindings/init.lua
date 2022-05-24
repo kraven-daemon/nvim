@@ -66,6 +66,12 @@ map("n", "=", "<C-w>2<" )
 map("n", "-", "<C-w>2>" )
 
 -- Tabs like browser
+map("n", "<M-t>", ":tabnew<CR>")
+map("i", "<A-t>", "<ESC>:tabnew<CR>")
+map("v", "<A-t>", "<ESC>:tabnew<CR>")
+map("n", "<A-w>", ":tabclose<CR>")
+map("i", "<A-w>", "<ESC>:tabclose<CR>")
+map("v", "<A-w>", "<ESC>:tabclose<CR>")
 map("n", "<A-1>", "1gt")
 map("n", "<A-2>", "2gt")
 map("n", "<A-3>", "3gt")

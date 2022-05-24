@@ -34,12 +34,12 @@ packer.startup(
         -- snippet
         use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
-
+        use "mattn/emmet-vim"
         -- Comments
         use "numToStr/Comment.nvim"
 
         -- Syntax and Treesitter
-        use  "preservim/tagbar"
+        use  "preservim/tagbar" -- for ctags and more
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
         use "nvim-treesitter/playground"
         -- Polyglot is a collection of syntax files, for treesitter leftovers
@@ -57,7 +57,6 @@ packer.startup(
         -- Candy
         use "hoob3rt/lualine.nvim" --, -- requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use "nvim-lua/lsp-status.nvim"
-        -- use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
         use "rktjmp/lush.nvim"
         use "chriskempson/base16-vim"
 
