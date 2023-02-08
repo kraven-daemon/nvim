@@ -7,6 +7,8 @@ local function prequire(...)
         return nil
 end
 
+
+
 -- Global functions -> for keybindings...
 function Toggle_hls()
     if vim.api.nvim_get_option("hls") then

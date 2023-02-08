@@ -26,14 +26,15 @@ packer.startup(
         -- lsp
         use "neovim/nvim-lspconfig"
         -- completion
+        use "hrsh7th/nvim-cmp"
         use "hrsh7th/cmp-nvim-lsp"
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
-        use "hrsh7th/nvim-cmp"
         -- snippet
-        use "L3MON4D3/LuaSnip"
-        use "saadparwaiz1/cmp_luasnip"
+        use "SirVer/ultisnips"
+        use "quangnguyen30192/cmp-nvim-ultisnips" -- linking with cmp
+        use 'honza/vim-snippets'
         use "mattn/emmet-vim"
         -- Comments
         use "numToStr/Comment.nvim"
@@ -42,9 +43,7 @@ packer.startup(
         use  "preservim/tagbar" -- for ctags and more
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
         use "nvim-treesitter/playground"
-        -- Polyglot is a collection of syntax files, for treesitter leftovers
-        use "sheerun/vim-polyglot"
-
+        --
         -- Misc
         use "windwp/nvim-autopairs" -- it use treesitter to autopair (){}[]'"'
 
@@ -59,10 +58,6 @@ packer.startup(
         use "nvim-lua/lsp-status.nvim"
         use "rktjmp/lush.nvim"
         use "chriskempson/base16-vim"
-
-        -- rocks test
-        -- use_rocks {"lua-fmt", server = 'https://luarocks.org/dev'}
-        -- use_rocks {'luaformatter', server = 'https://luarocks.org/dev'}
     end
 )
 
