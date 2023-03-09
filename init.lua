@@ -58,5 +58,8 @@ prequire("auto-events")
 -- Nice little rock
 -- require("test-fmt")
 
+-- vim.cmd('let g:user_emmet_leader_key="<C-e>"')
+vim.g.user_emmet_leader_key = '<C-e>'
+
 
 

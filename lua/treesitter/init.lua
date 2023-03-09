@@ -3,7 +3,7 @@ require("nvim-treesitter.configs").setup {
     ensure_installed = {
         "awk", "bash",
         "html", "css", "jsonc", "json", "javascript", "typescript",
-        "astro",
+        "astro", "svelte",
         "dart",
 
         "git_rebase",
@@ -31,7 +31,6 @@ require("nvim-treesitter.configs").setup {
         "cmake", "dockerfile",
         "dart",             -- mobile
         "comment",  "diff"  -- others
-
     },
     highlight = {enable = true},
     incremental_selection = {

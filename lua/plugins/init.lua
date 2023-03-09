@@ -22,9 +22,10 @@ local use = packer.use
 
 packer.startup(
     function()
-        use {"wbthomason/packer.nvim"}
+        use "wbthomason/packer.nvim"
         -- lsp
         use "neovim/nvim-lspconfig"
+        use "dart-lang/dart-vim-plugin"
         -- completion
         use "hrsh7th/nvim-cmp"
         use "hrsh7th/cmp-nvim-lsp"

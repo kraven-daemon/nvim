@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/kraven/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["dart-vim-plugin"] = {
+    loaded = true,
+    path = "/home/kraven/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
+    url = "https://github.com/dart-lang/dart-vim-plugin"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/kraven/.local/share/nvim/site/pack/packer/start/emmet-vim",
