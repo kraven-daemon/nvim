@@ -84,7 +84,7 @@ prequire("plugins")
 
 prequire("treesitter")
 prequire("lsp")
-prequire("telescope")
+prequire("telesconfig")
 
 prequire("options")
 

@@ -53,9 +53,9 @@ packer.startup(
         use "windwp/nvim-autopairs" -- it use treesitter to autopair (){}[]'"'
 
         -- Nagivation, everywhere
-        use "nvim-telescope/telescope.nvim" -- fuzzy finder
         use "nvim-lua/popup.nvim" -- boxes
         use "nvim-lua/plenary.nvim" -- set of functions
+        use "nvim-telescope/telescope.nvim" -- fuzzy finder
 
         -- Candy
         use "hoob3rt/lualine.nvim" -- require a nerdfonts or web-devicon
