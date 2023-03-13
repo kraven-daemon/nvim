@@ -179,11 +179,6 @@ _G.packer_plugins = {
     path = "/home/kraven/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
   },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/home/kraven/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/kraven/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -198,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kraven/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
+  },
+  ["yaml.nvim"] = {
+    loaded = true,
+    path = "/home/kraven/.local/share/nvim/site/pack/packer/start/yaml.nvim",
+    url = "https://github.com/cuducos/yaml.nvim"
   }
 }
 

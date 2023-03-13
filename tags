@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/kraven/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+Gen_tab_str	lua/tabline/init.lua	/^function Gen_tab_str()$/;"	f
+Toggle_hls	init.lua	/^function Toggle_hls()$/;"	f
+Trim_space	init.lua	/^function Trim_space()$/;"	f
+_G.put	init.lua	/^function _G.put(...)$/;"	f
+error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+expand	lua/lsp/init.lua	/^    expand = function(args)$/;"	f
+map	lua/keybindings/init.lua	/^local function map(mode, lhs, rhs, opts)$/;"	f
+nvim	README.md	/^# nvim$/;"	c
+on_attach	lua/lsp/init.lua	/^local on_attach = function(client, bufnr)$/;"	f
+prequire	init.lua	/^local function prequire(...)$/;"	f
+save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+time	plugin/packer_compiled.lua	/^  time = function(chunk, start) end$/;"	f
+time	plugin/packer_compiled.lua	/^  time = function(chunk, start)$/;"	f
+try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f

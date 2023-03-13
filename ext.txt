@@ -1,0 +1,41 @@
+if vim.g.neovide then\n    -- Put anything you want to happen only in Neovide here\nend\n
+vim.o.guifont = \"Source Code Pro:h14\" -- text below applies for VimScript\n
+vim.opt.linespace = 0\n
+vim.g.neovide_scale_factor = 1.0\n
+vim.g.neovide_padding_top = 0\nvim.g.neovide_padding_bottom = 0\nvim.g.neovide_padding_right = 0\nvim.g.neovide_padding_left = 0\n
+-- Helper function for transparency formatting\nlocal alpha = function()\n  return string.format(\"%x\", math.floor(255 * vim.g.transparency or 0.8))\nend\n-- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.\nvim.g.neovide_transparency = 0.0\nvim.g.transparency = 0.8\nvim.g.neovide_background_color = \"#0f1117\" .. alpha()\n
+vim.g.neovide_floating_blur_amount_x = 2.0\nvim.g.neovide_floating_blur_amount_y = 2.0\n
+vim.g.neovide_transparency = 0.8\n
+vim.g.neovide_scroll_animation_length = 0.3\n
+vim.g.neovide_hide_mouse_when_typing = false\n
+vim.g.neovide_underline_automatic_scaling = false\n
+vim.g.neovide_refresh_rate = 60\n
+vim.g.neovide_refresh_rate_idle = 5\n
+vim.g.neovide_no_idle = true\n
+vim.g.neovide_confirm_quit = true\n
+vim.g.neovide_fullscreen = true\n
+vim.g.neovide_remember_window_size = true\n
+vim.g.neovide_profiler = false\n
+vim.g.neovide_input_use_logo = false    -- true on macOS\n
+vim.g.neovide_input_macos_alt_is_meta = false\n
+vim.g.neovide_touch_deadzone = 6.0\n
+vim.g.neovide_touch_drag_timeout = 0.17\n
+vim.g.neovide_cursor_animation_length = 0.13\n
+vim.g.neovide_cursor_trail_size = 0.8\n
+vim.g.neovide_cursor_antialiasing = true\n
+vim.g.neovide_cursor_animate_in_insert_mode = true\n
+vim.g.neovide_cursor_animate_command_line = true\n
+vim.g.neovide_cursor_unfocused_outline_width = 0.125\n
+vim.g.neovide_cursor_vfx_mode = \"\"\n
+vim.g.neovide_cursor_vfx_mode = \"railgun\"\n
+vim.g.neovide_cursor_vfx_mode = \"torpedo\"\n
+vim.g.neovide_cursor_vfx_mode = \"pixiedust\"\n
+vim.g.neovide_cursor_vfx_mode = \"sonicboom\"\n
+vim.g.neovide_cursor_vfx_mode = \"ripple\"\n
+vim.g.neovide_cursor_vfx_mode = \"wireframe\"\n
+vim.g.neovide_cursor_vfx_opacity = 200.0\n
+vim.g.neovide_cursor_vfx_particle_lifetime = 1.2\n
+vim.g.neovide_cursor_vfx_particle_density = 7.0\n
+vim.g.neovide_cursor_vfx_particle_speed = 10.0\n
+vim.g.neovide_cursor_vfx_particle_phase = 1.5\n
+vim.g.neovide_cursor_vfx_particle_curl = 1.0\n

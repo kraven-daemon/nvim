@@ -11,26 +11,38 @@ end
 ---
 vim.g.mapleader = " "
 
--- some utility
-map('n', '<leader>f', ':Telescope file_browser<CR>')
-map("n", "<leader>h", ":lua Toggle_hls()<CR>")
-map("n", "<leader>w", ":lua Trim_space()<CR>")
+
+
+--[[  PLUGINS ]]
+
+-- Tagbar
 map("n", "<leader>t", ":TagbarToggle<CR>")
+map("n", "<leader>tn", ":TagbarJumpNext<CR>")
+map("n", "<leader>tv", ":TagbarJumpPrev<CR>")
+
+-- Telescope 
+map('n', '<leader>b', ':Telescope buffers<CR>')
+map('n', '<leader>f', ':Telescope find_files<CR>')
+--
+--[[  UTILS ]]
+map("n", "<leader>h", ":lua Toggle_hls()<CR>")
+-- map("n", "<leader>u", ":lua Trim_space()<CR>")
+
 
 -- buffers
-map('n', '<leader>b', ':Telescope buffers<CR>')
+map('n', '<leader>B', ':bufdo bd<CR>')
 map('n', '<leader>n', ':bnext<CR>')
 map('n', '<leader>v', ':bprevious<CR>')
 -- smart yanking
 map("n", "Y", "y$")
 
 -- Keeping it centered, when moving in search or joining lines
-map("n", "n", "nzzzv")
+map("n", "j", "jzz")
+map("n", "k", "kzz")
 map("n", "N", "Nzzzv")
 map("n", "J", "mzJ`zzz")
 
 -- Undo breakpoints, pretty usefull
-
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", "!", "!<c-g>u")

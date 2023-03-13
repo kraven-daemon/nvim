@@ -1,36 +1,70 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 require("nvim-treesitter.configs").setup {
     ensure_installed = {
-        "awk", "bash",
-        "html", "css", "jsonc", "json", "javascript", "typescript",
-        "astro", "svelte",
-        "dart",
+        -- sys
+        "bash", "lua", "jq", "nix", "python", "regex",
 
+        -- web
+        "html", "css", "scss",
+        "javascript", "typescript",
+        "astro", "svelte", "vue", "tsx",
+        "jsdoc",
+
+        -- crossplatform/mobile
+        "java",
+        "dart",
+        "kotlin",
+        "swift",
+
+        -- lowlvl
+        "llvm",
+        "rust",
+        "c", "cpp",
+        "glsl",
+        "meson",
+        "ninja",
+        "cmake",
+
+        -- data
+        "sql",
+        "graphql",
+        "ini",
+        "yaml", "toml", "json",
+        "hjson",
+        "jsonc",
+        "json5",
+        "jsonnet",
+        "mermaid",
+
+        -- vim
+        "help",
+        "vim",
+
+        -- occasionnal
+        "erlang",
+        "elixir",
+        "go",
+        "gomod",
+        "gosum",
+
+        -- misc
+        "make",
+        "latex",
+        "comment", -- TODO: asd, XXX: fix, ...
+        "diff",
+        "dockerfile",
+        -- "gitconfig",
         "git_rebase",
         "gitattributes",
         "gitcommit",
-        "glsl",
-        "go",
-        "graphql",
-        "help",
-        "hjson",
-        "hlsl",
-        "hocon",
+        "gitignore",
         "http",
-        "ini",
-        "java",
-        "jq",
-        "jsdoc",
-        "json",
-        "json5",
-        "jsonc",
-        "jsonnet",
-
-        "lua",
-        "c", "cpp",
-        "cmake", "dockerfile",
-        "dart",             -- mobile
-        "comment",  "diff"  -- others
+        "markdown",
+        "markdown_inline"
+    -- sxhkdrc"
+    -- terraform"
+    -- todotxt"
+    -- "ungrammar"
     },
     highlight = {enable = true},
     incremental_selection = {

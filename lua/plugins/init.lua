@@ -23,9 +23,12 @@ local use = packer.use
 packer.startup(
     function()
         use "wbthomason/packer.nvim"
-        -- lsp
+
+        -- language helpers
         use "neovim/nvim-lspconfig"
         use "dart-lang/dart-vim-plugin"
+        use "cuducos/yaml.nvim"
+
         -- completion
         use "hrsh7th/nvim-cmp"
         use "hrsh7th/cmp-nvim-lsp"
@@ -37,25 +40,25 @@ packer.startup(
         use "quangnguyen30192/cmp-nvim-ultisnips" -- linking with cmp
         use 'honza/vim-snippets'
         use "mattn/emmet-vim"
+
         -- Comments
         use "numToStr/Comment.nvim"
 
         -- Syntax and Treesitter
-        use  "preservim/tagbar" -- for ctags and more
-        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use "preservim/tagbar" -- for ctags and more
+        use "nvim-treesitter/nvim-treesitter"
         use "nvim-treesitter/playground"
         --
         -- Misc
         use "windwp/nvim-autopairs" -- it use treesitter to autopair (){}[]'"'
 
-        -- 3 in 1 , plenary(set of functions), popup(vimbuffer overlay boxes) and telescope(fuzzy finder)
-        use {
-            "nvim-telescope/telescope-file-browser.nvim",
-            requires = {{"nvim-telescope/telescope.nvim"}, {"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
-        }
+        -- Nagivation, everywhere
+        use "nvim-telescope/telescope.nvim" -- fuzzy finder
+        use "nvim-lua/popup.nvim" -- boxes
+        use "nvim-lua/plenary.nvim" -- set of functions
 
         -- Candy
-        use "hoob3rt/lualine.nvim" --, -- requires = {"kyazdani42/nvim-web-devicons", opt = true}}
+        use "hoob3rt/lualine.nvim" -- require a nerdfonts or web-devicon
         use "nvim-lua/lsp-status.nvim"
         use "rktjmp/lush.nvim"
         use "chriskempson/base16-vim"
