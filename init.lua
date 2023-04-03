@@ -10,23 +10,16 @@ end
 -- TODO: move to external module
 -- ? neovide test
 if vim.g.neovide then
-    --
-    -- vim.o.guifont = "Source Code Pro:h14" -- text below applies for VimScript
-    --
+    vim.o.guifont = "Source Code Pro:h12"
     -- neovide_transparency should be 0
     -- if you want to unify transparency of content and title bar.
     -- window padding
-    -- vim.g.neovide_padding_top = 0
-    -- vim.g.neovide_padding_bottom = 0
-    vim.g.neovide_padding_right = 700
-    vim.g.neovide_padding_left = 0
-
-    -- Setting g:neovide_cursor_animation_length
-    --  Set to 0 to disable.
-    --  - determines the time it takes for the cursor to complete...
-    --  ...it's animation in seconds.
-    vim.g.neovide_cursor_animation_length = 0
-
+    vim.g.neovide_padding_top = 1
+    vim.g.neovide_padding_bottom = 1
+    vim.g.neovide_padding_right = 1
+    vim.g.neovide_padding_left = 1
+    --  ... seconds.
+    vim.g.neovide_cursor_animation_length = 0.1
     -- vim.o.guifont = \"Source Code Pro:h14\" -- text below applies for VimScript\n
     -- vim.opt.linespace = 0
     -- vim.g.neovide_scale_factor = 1.0
