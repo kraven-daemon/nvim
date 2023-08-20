@@ -3,7 +3,6 @@
 -- https://github.com/hrsh7th/nvim-cmp
 -- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
--- https://github.com/sumneko/lua-language-server
 -- luasnip
 
 -- Lsp
@@ -11,11 +10,9 @@ local lspc = require('lspconfig')
 -- nvim-cmp
 local cmp = require('cmp');
 -- integrate mappings from ultisnip to cmp
-local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 -- lsp keybinding
-
-
+--
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -47,14 +44,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-
-
-
-
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   window = {
@@ -67,19 +60,9 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ["<Tab>"] = cmp.mapping(
-        function(fallback)
-            cmp_ultisnips_mappings.compose { "expand", "jump_forwards" }(fallback)
-        end
-    ),
-    ["<S-Tab>"] = cmp.mapping(
-        function(fallback)
-            cmp_ultisnips_mappings.compose { "jump_backwards" }(fallback)
-        end
-    )
   }),
   sources = cmp.config.sources({
-    { name = 'ultisnips' }, -- For ultisnips users.
+    { name = 'luasnip' }, -- For ultisnips users.
     { name = 'nvim_lsp' },
   }, {
     { name = 'buffer' },
@@ -123,7 +106,19 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+
 -- lang server that require particular config
+lspc.lua_ls.setup{
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT"
+      }
+    }
+  }
+}
+
+
 lspc.denols.setup {
   root_dir = lspc.util.root_pattern("deno.json"),
   init_options = {

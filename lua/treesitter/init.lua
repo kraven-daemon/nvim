@@ -37,7 +37,6 @@ require("nvim-treesitter.configs").setup {
         "mermaid",
 
         -- vim
-        "help",
         "vim",
 
         -- occasionnal

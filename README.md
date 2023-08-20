@@ -2,4 +2,9 @@
 My neovim configuration file, in a separated repository.
 
 # depends
-`fzf ripgrep`
+* fzf
+* ripgrep
+* luarocks
+* nodejs
+* pnpm
+* 

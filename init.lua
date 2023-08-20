@@ -7,6 +7,7 @@ local function prequire(...)
         return nil
 end
 
+
 -- TODO: move to external module
 -- ? neovide test
 if vim.g.neovide then
@@ -97,5 +98,7 @@ prequire('comments')
 prequire("auto-events")
 
 prequire("utils")
+prequire("masonne")
+
 
 vim.g.user_emmet_leader_key = '<C-e>'

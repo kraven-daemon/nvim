@@ -23,11 +23,19 @@ local use = packer.use
 packer.startup(
     function()
         use "wbthomason/packer.nvim"
+        use({
+            "L3MON4D3/LuaSnip",
+            -- follow latest release.
+            tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+            -- install jsregexp (optional!:).
+            run = "make install_jsregexp"
+        })
+
+
 
         -- language helpers
         use "neovim/nvim-lspconfig"
-        use "dart-lang/dart-vim-plugin"
-        use "cuducos/yaml.nvim"
+        use "williamboman/mason.nvim"
 
         -- completion
         use "hrsh7th/nvim-cmp"
@@ -36,8 +44,6 @@ packer.startup(
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
         -- snippet
-        use "SirVer/ultisnips"
-        use "quangnguyen30192/cmp-nvim-ultisnips" -- linking with cmp
         use 'honza/vim-snippets'
         use "mattn/emmet-vim"
 
